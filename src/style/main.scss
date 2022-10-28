@@ -1,0 +1,139 @@
+@import "_variables";
+@import "_mixin-main";
+@import "_common";
+@import "_header";
+@import "_hero";
+@import "_studio";
+@import "_projects";
+@import "_services";
+@import "_classes";
+@import "_contacts";
+@import "_footer";
+
+.container {
+  @include container();
+  @media (max-width: 946px) {
+    @include container--lg();
+  }
+  @media (max-width: 570px) {
+    @include container--sm();
+  }
+}
+
+.popup-response {
+  @include position-fix();
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0;
+  background: rgba(0, 0, 0, 0.6);
+  &__open {
+    @include modal-open();
+  }
+  &__close {
+    @include modal-close();
+  }
+  &__container {
+    position: relative;
+    overflow: auto;
+    height: 100%;
+    max-width: 500px;
+    width: 100%;
+    max-height: 300px;
+    padding: 30px;
+    padding-right: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.8);
+    background-color: $color_4;
+  }
+  &__btn {
+    @include throw-btn();
+    @include btn-hidden();
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+  }
+  &__img {
+    width: 240px;
+    height: 140px;
+    margin: 0 auto;
+    & svg {
+      @include block-100();
+    }
+  }
+  &__desc {
+    text-align: center;
+    width: max-content;
+    margin: 0 auto;
+    font-size: 32px;
+    line-height: 32px;
+    color: $color_7;
+  }
+  @media (max-width: 767px) {
+    &__container {
+      width: 290px;
+      height: 200px;
+      padding: 30px 16px;
+      padding-right: 10px;
+    }
+    &__img {
+      width: 180px;
+      height: 100px;
+    }
+    &__desc {
+      max-width: 194px;
+      min-height: 32px;
+      font-size: 16px;
+      line-height: 16px;
+    }
+  }
+}
+
+.just-validate-tooltip {
+  &-container {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+  &-hide {
+    @-webkit-keyframes fadeOut {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+    animation: fadeOut 0.4s ease-in-out;
+    opacity: 0;
+  }
+}
+
+.js-validate-error-label {
+  position: absolute;
+  font-family: "Roboto";
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 70%;
+  min-height: max-content;
+  color: #ff3030;
+  top: 3px;
+  left: 23px;
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 11px;
+  pointer-events: none;
+  transition: all 0.4s linear;
+}

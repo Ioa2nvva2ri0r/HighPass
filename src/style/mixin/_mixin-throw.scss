@@ -1,0 +1,17 @@
+@mixin throw {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin throw-li {
+  @include throw();
+  list-style: none;
+}
+
+@mixin throw-btn {
+  position: relative;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+}

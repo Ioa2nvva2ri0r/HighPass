@@ -1,0 +1,33 @@
+@mixin img {
+  @include block-100();
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@mixin picture {
+  @include block-100();
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+@mixin img-sub {
+  position: absolute;
+  content: "";
+  top: 7px;
+  right: 7px;
+  padding: 6px 14px;
+  background-color: $color_6;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  color: $color_7;
+}
+
+@mixin img-sub--sm {
+  top: 4px;
+  right: 6px;
+  padding: 4px 14px;
+  font-size: 12px;
+  line-height: 15px;
+}

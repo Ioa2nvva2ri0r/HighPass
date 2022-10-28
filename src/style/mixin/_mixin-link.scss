@@ -1,0 +1,39 @@
+@mixin link-us {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  z-index: 2;
+  font-family: "TT Firs Neue";
+  transition: color 0.4s ease-in-out;
+  &::after {
+    @include block-100();
+    position: absolute;
+    content: "";
+    top: 0;
+    left: -5px;
+    z-index: -1;
+    padding: 0 5px;
+    transition: background-color 0.4s ease-in-out;
+  }
+}
+
+@mixin socials {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  & svg > path {
+    transition: fill 0.4s ease-in-out;
+  }
+  &:hover svg path {
+    fill: $color_1;
+    transition: fill 0.4s ease-in-out;
+  }
+  &:focus svg path {
+    fill: $color_2;
+    transition: fill 0.4s ease-in-out;
+  }
+  &:active svg path {
+    fill: $color_3;
+    transition: fill 0.4s ease-in-out;
+  }
+}

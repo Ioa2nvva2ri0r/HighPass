@@ -1,0 +1,18 @@
+@mixin container {
+  position: relative;
+  max-width: 1350px;
+  width: 100%;
+  margin: 0 auto;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+@mixin container--lg {
+  padding-right: 27px;
+  padding-left: 27px;
+}
+
+@mixin container--sm {
+  padding-right: 21px;
+  padding-left: 21px;
+}

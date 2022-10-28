@@ -1,0 +1,185 @@
+.section-hero {
+  padding: 40px 0;
+  &__container {
+    @include container();
+    display: grid;
+    grid-template-columns: 48.8% repeat(2, 23.2%);
+    grid-template-rows: 2fr;
+    gap: 30px;
+    min-height: 640px;
+  }
+  &__img {
+    @include picture();
+    &-box {
+      &:nth-child(1) {
+        position: relative;
+        display: flex;
+        align-self: end;
+        align-items: flex-end;
+        grid-column: 1/2;
+        grid-row: 1/3;
+        height: 100%;
+        padding: 60px;
+        &::after {
+          @include img-sub();
+          content: "#мастеркласс";
+          top: 15px;
+          right: 15px;
+          padding: 7px 15px;
+        }
+      }
+      &:nth-child(3) {
+        grid-column: 2/3;
+        grid-row: 2/3;
+      }
+      &:nth-child(4) {
+        grid-column: 3/4;
+        grid-row: 2/3;
+      }
+      &-main {
+        @include position-abs();
+        z-index: -1;
+      }
+    }
+  }
+  &__title {
+    min-height: 25px;
+    margin-bottom: 15px;
+    &-box-img {
+      align-self: end;
+      grid-column: 2/4;
+      grid-row: 1/2;
+    }
+  }
+  &__desc {
+    &-box {
+      z-index: 1;
+      color: $color_7;
+    }
+    &-subtitle {
+      @include throw();
+      font-weight: 400;
+    }
+    &-title {
+      max-width: 450px;
+      min-height: 75px;
+      margin-bottom: 20px;
+      font-size: 36px;
+      line-height: 37px;
+      color: $color_7;
+    }
+  }
+  @media (max-width: 1315px) {
+    &__container {
+      grid-template-columns: 48.4% repeat(2, 22.5%);
+      min-height: 450px;
+    }
+    &__title {
+      line-height: 25px;
+      &-box-img {
+        align-self: self-start;
+        & .section-hero__img {
+          min-height: 340px;
+        }
+      }
+    }
+    &__img {
+      &-box {
+        &:nth-child(1) {
+          padding: 30px;
+        }
+      }
+    }
+    &__desc {
+      &-title {
+        margin-bottom: 15px;
+        font-size: 34px;
+        line-height: 35px;
+      }
+    }
+  }
+  @media (max-width: 900px) {
+    &__container {
+      grid-template-columns: 47.9% repeat(2, 21.7%);
+    }
+    &__title {
+      font-size: 19px;
+      line-height: 19px;
+      &-box-img {
+        & .section-hero__img {
+          min-height: 250px;
+        }
+      }
+    }
+    &__desc {
+      &-subtitle {
+        font-size: 15px;
+      }
+      &-title {
+        min-height: 65px;
+        max-width: 240px;
+        margin-bottom: 15px;
+        font-size: 24px;
+        line-height: 24px;
+      }
+    }
+  }
+  @media (max-width: 650px) {
+    &__container {
+      grid-template-columns: repeat(2, 44%);
+      grid-template-rows: 3fr;
+      min-height: 830px;
+    }
+    &__img {
+      &-box {
+        &:nth-child(1) {
+          grid-column: 1/3;
+          grid-row: 1/2;
+          padding: 25px;
+          &::after {
+            @include img-sub--sm();
+            top: 5px;
+            padding: 4px 7px;
+          }
+          & .section-hero__img {
+            object-position: 50% 20%;
+          }
+        }
+        &:nth-child(3) {
+          grid-column: 1/2;
+          grid-row: 3/4;
+        }
+        &:nth-child(4) {
+          grid-column: 2/3;
+          grid-row: 3/4;
+        }
+      }
+    }
+    &__title {
+      font-size: 18px;
+      line-height: 21px;
+      margin-bottom: 14px;
+      &-box-img {
+        grid-column: 1/3;
+        grid-row: 2/3;
+        & .section-hero__img {
+          min-height: 186px;
+        }
+      }
+    }
+    &__desc {
+      &-subtitle {
+        margin-bottom: 6px;
+      }
+      &-title {
+        max-width: 167px;
+        margin-bottom: 16px;
+        font-size: 20px;
+        line-height: 25px;
+      }
+      &-btn {
+        @include btn-us--sm();
+      }
+    }
+  }
+}

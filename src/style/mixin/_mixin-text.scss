@@ -1,0 +1,27 @@
+@mixin title {
+  @include throw();
+  width: 100%;
+  max-width: 700px;
+  font-family: "TT Firs Neue";
+  font-size: 24px;
+  font-weight: 700;
+  color: $color_4;
+}
+
+@mixin title--sm {
+  font-size: 18px;
+  line-height: 23px;
+}
+
+@mixin desc {
+  @include throw();
+  width: 100%;
+  line-height: 28px;
+  color: $color_8;
+}
+
+@mixin text-nowrap {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

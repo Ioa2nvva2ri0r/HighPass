@@ -1,0 +1,61 @@
+@import "./mixin/_mixin-throw";
+@import "./mixin/_mixin-position";
+@import "./mixin/_mixin-display";
+@import "./mixin/_mixin-img";
+@import "./mixin/_mixin-animation";
+@import "./mixin/_mixin-container";
+@import "./mixin/_mixin-btn";
+@import "./mixin/_mixin-link";
+@import "./mixin/_mixin-text";
+
+@mixin tel {
+  @include flex-center();
+  color: $color_7;
+  & svg {
+    margin-left: -3px;
+  }
+  & svg path {
+    transition: fill 0.4s ease-in-out;
+  }
+  &:hover svg path {
+    fill: $color_1;
+    transition: fill 0.4s ease-in-out;
+  }
+  &:active svg path {
+    fill: $color_3;
+  }
+  &:hover {
+    color: $color_1;
+  }
+  &:focus::after {
+    background-color: $color_2;
+  }
+  &:active::after {
+    background-color: transparent;
+  }
+  &:active {
+    color: $color_3;
+  }
+}
+
+@mixin search {
+  & svg path {
+    transition: fill 0.4s ease-in-out;
+  }
+  &:hover svg path {
+    fill: $color_1;
+    transition: fill 0.4s ease-in-out;
+  }
+  &:focus svg path {
+    fill: $color_1;
+  }
+  &:active svg path {
+    fill: $color_3;
+  }
+}
+
+@mixin date-icon {
+  background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.6667 1.75004H11.0833V0.583374H9.91667V1.75004H4.08334V0.583374H2.91667V1.75004H2.33334C1.69167 1.75004 1.16667 2.27504 1.16667 2.91671V12.25C1.16667 12.8917 1.69167 13.4167 2.33334 13.4167H11.6667C12.3083 13.4167 12.8333 12.8917 12.8333 12.25V2.91671C12.8333 2.27504 12.3083 1.75004 11.6667 1.75004ZM11.6667 12.25H2.33334V4.66671H11.6667V12.25Z' fill='%23FFFFFF'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+}
+

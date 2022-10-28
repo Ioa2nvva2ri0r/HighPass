@@ -1,0 +1,113 @@
+.section-studio {
+  min-height: 500px;
+  background-color: $color_4;
+  padding: 35px 0;
+  &__title {
+    margin-bottom: 9px;
+    color: $color_7;
+  }
+  &__desc {
+    @include desc();
+    max-width: 620px;
+    &-box {
+      display: grid;
+      grid-template-columns: 49% 48.7%;
+      gap: 29px;
+    }
+  }
+  &__img {
+    @include img();
+    height: 255px;
+    margin-bottom: 23px;
+    background-image: url("../img/studio/1.webp");
+  }
+  &__form {
+    @include flex-between();
+    &-title {
+      margin-bottom: 17px;
+      font-weight: 400;
+      color: $color_7;
+    }
+    &-input {
+      width: 100%;
+      max-width: 475px;
+      height: 50px;
+      border: 0;
+      padding: 5px 22px;
+      background-color: #4a4a4a;
+      color: $color_7;
+      transition: outline 0.4s ease-in-out;
+      &::placeholder {
+        color: $color_8;
+        transition: color 0.4s ease-in-out;
+      }
+      &:hover::placeholder {
+        color: $color_1;
+      }
+      &:focus {
+        outline: 2px solid $color_1;
+      }
+    }
+  }
+  @media (max-width: 1315px) {
+    min-height: 650px;
+    &__desc {
+      &-box {
+        grid-template-columns: repeat(2, 48.4%);
+        gap: 30px;
+      }
+    }
+    &__img {
+      height: 332px;
+    }
+    &__form {
+      flex-direction: column;
+      &-input {
+        width: 75%;
+        margin-bottom: 21px;
+      }
+      &-btn {
+        max-width: 125px;
+      }
+    }
+  }
+  @media (max-width: 900px) {
+    min-height: 884px;
+    &__desc {
+      &-box {
+        grid-template-columns: 100%;
+        grid-template-rows: 2fr;
+        gap: 25px;
+      }
+    }
+    &__img {
+      height: 400px;
+    }
+  }
+  @media (max-width: 650px) {
+    &__title {
+      @include title--sm();
+    }
+    &__desc {
+      line-height: 25px;
+      &-box {
+        grid-template-columns: 100%;
+        grid-template-rows: 2fr;
+        gap: 25px;
+      }
+    }
+    &__img {
+      height: 278px;
+      margin-bottom: 25px;
+    }
+    &__form {
+      &-title {
+        @include title--sm();
+        margin-bottom: 14px;
+      }
+      &-input {
+        width: 100%;
+      }
+    }
+  }
+}

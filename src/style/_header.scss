@@ -1,0 +1,305 @@
+.header {
+  &__box {
+    @include flex-center();
+    &-1 {
+      min-height: 80px;
+      background-color: $color_4;
+    }
+    &-2 {
+      min-height: 45px;
+      background-color: #4a4a4a;
+    }
+  }
+  &__content {
+    @include flex-center-between();
+    position: relative;
+    &-2 {
+      justify-content: flex-end;
+    }
+  }
+  &__logo {
+    width: 190px;
+    height: 31px;
+    &-link {
+      display: inline-block;
+      height: 31px;
+      outline-offset: 3px;
+      margin-right: 48px;
+      transition: outline 0.4s ease-in-out;
+      &:hover {
+        outline: 2px solid $color_1;
+      }
+      &:focus {
+        outline: 2px solid $color_1;
+      }
+      &:active {
+        outline: 2px solid $color_3;
+      }
+    }
+  }
+  &__nav {
+    width: 57.5%;
+    margin-bottom: 5px;
+    &-open {
+      @include menu-open();
+    }
+    &-close {
+      @include menu-close();
+    }
+    &-list {
+      @include throw-li();
+      @include flex-between();
+    }
+    &-item {
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+    &-link {
+      @include link-us();
+      color: $color_7;
+      &:hover {
+        color: $color_1;
+      }
+      &:focus::after {
+        background-color: $color_2;
+      }
+      &:active::after {
+        background-color: transparent;
+      }
+      &:active {
+        color: $color_3;
+      }
+    }
+    &-btn {
+      &-open {
+        display: none;
+      }
+      &-close {
+        display: none;
+      }
+    }
+    &-tel {
+      @include link-us();
+      @include tel();
+      position: absolute;
+      left: 31px;
+      bottom: -53px;
+      font-weight: 700;
+      &-sm {
+        display: none;
+      }
+    }
+  }
+  &__socials {
+    &-list {
+      @include throw-li();
+      display: flex;
+    }
+    &-item {
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+    &-link {
+      @include socials();
+    }
+  }
+  &__search {
+    width: 170px;
+    padding: 0;
+    border-bottom: 1px solid $color_5;
+    font-family: "TT Firs Neue";
+    font-size: 16px;
+    color: $color_5;
+    transition: border-color 0.4s ease-in-out;
+    &::placeholder {
+      font-family: "TT Firs Neue";
+      font-size: 14px;
+      line-height: 18px;
+      color: $color_5;
+    }
+    &:hover {
+      border-color: $color_1;
+      transition: border-color 0.4s ease-in-out;
+    }
+    &:focus {
+      border-color: $color_1;
+      transition: border-color 0.4s ease-in-out;
+    }
+    &:active {
+      border-color: $color_3;
+      transition: border-color 0.4s ease-in-out;
+    }
+    &-open {
+      @include visible();
+    }
+    &-close {
+      @include hidden();
+    }
+    &-btn-open {
+      display: none;
+    }
+    &-form {
+      @include flex-center();
+      justify-content: flex-end;
+      margin-bottom: 4px;
+    }
+    &-btn {
+      @include throw-btn();
+      @include search();
+      width: 23px;
+      height: 20px;
+      & svg {
+        margin-top: 4px;
+        margin-right: 2px;
+      }
+    }
+  }
+  @media (max-width: 1315px) {
+    &__logo {
+      width: 167px;
+      height: 27px;
+      margin-bottom: -3px;
+      &-link {
+        height: 27px;
+        margin-right: 0;
+      }
+    }
+    &__nav {
+      width: 57.9%;
+      &-tel {
+        color: $color_1;
+        & svg path {
+          fill: $color_1;
+        }
+      }
+    }
+    &__socials {
+      &-item {
+        &:not(:last-child) {
+          margin-right: 21px;
+        }
+      }
+    }
+    &__search {
+      width: 198px;
+      &::placeholder {
+        font-size: 16px;
+      }
+      &-form {
+        margin-bottom: 6px;
+      }
+    }
+  }
+  @media (max-width: 900px) {
+    &__nav {
+      position: absolute;
+      top: 66px;
+      left: 0;
+      width: 100%;
+      margin: 0;
+      &-list {
+        justify-content: space-around;
+      }
+      &-tel {
+        left: initial;
+        right: 94px;
+        bottom: 61px;
+      }
+    }
+    &__socials {
+      &-list {
+        display: none;
+      }
+    }
+    &__search {
+      &-form {
+        position: absolute;
+        display: none;
+        top: -92px;
+        right: 25px;
+        height: 60px;
+        width: 270px;
+        margin-bottom: 0;
+        z-index: 9;
+        background-color: #202020;
+      }
+      &-btn-open {
+        @include throw-btn();
+        @include search();
+        display: block;
+        width: 23px;
+        height: 20px;
+      }
+    }
+  }
+  @media (max-width: 650px) {
+    &__logo {
+      width: 112px;
+      height: 18px;
+      &-link {
+        height: 18px;
+      }
+    }
+    &__box {
+      &-1 {
+        min-height: 70px;
+      }
+    }
+    &__content-2 {
+      justify-content: space-between;
+    }
+    &__nav {
+      @include position-abs();
+      top: -25px;
+      display: none;
+      height: 300px;
+      padding: 30px;
+      padding-right: 50px;
+      background: rgba(0, 0, 0, 0.9);
+      &-list {
+        flex-direction: column;
+        justify-content: space-between;
+        padding-bottom: 30px;
+      }
+      &-item {
+        &:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 17px;
+        }
+      }
+      &-btn {
+        &-open,
+        &-close {
+          @include throw-btn();
+          display: block;
+        }
+        &-close {
+          @include btn-hidden();
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          width: 20px;
+          height: 20px;
+        }
+      }
+      &-tel {
+        position: relative;
+        bottom: initial;
+        right: inherit;
+        &-sm {
+          display: flex;
+          margin-right: 20px;
+        }
+      }
+    }
+    &__search {
+      &-form {
+        top: -75px;
+        right: 19px;
+        width: 100%;
+      }
+    }
+  }
+}

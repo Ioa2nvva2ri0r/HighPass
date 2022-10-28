@@ -1,0 +1,50 @@
+@mixin btn-us {
+  position: relative;
+  cursor: pointer;
+  border: 3px solid transparent;
+  padding: 12px 20px;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  color: $color_7;
+  background-color: $color_1;
+  transition: border-color 0.4s ease-in-out, color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+  &:hover {
+    background-color: $color_2;
+    transition: border-color 0.4s ease-in-out, color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+  }
+  &:focus {
+    border-color: $color_3;
+    transition: border-color 0.4s ease-in-out, color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+  }
+  &:active {
+    border-color: transparent;
+    background-color: $color_3;
+    transition: border-color 0.4s ease-in-out, color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+  }
+}
+
+@mixin btn-us--sm {
+  padding: 9px 19px;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+@mixin btn-hidden {
+  & svg circle {
+    transition: fill 0.4s ease-in-out;
+  }
+  &:hover svg circle {
+    fill: $color_2;
+    transition: fill 0.4s ease-in-out;
+  }
+  &:focus svg circle {
+    fill: $color_2;
+    transition: fill 0.4s ease-in-out;
+  }
+  &:active svg circle {
+    fill: $color_3;
+    transition: fill 0.4s ease-in-out;
+  }
+}

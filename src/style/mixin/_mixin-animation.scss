@@ -1,0 +1,97 @@
+@mixin transition {
+  transition-duration: 0.4s;
+  transition-property: border, outline, background-color, color;
+  transition-timing-function: ease-in-out;
+}
+
+@mixin animation {
+  animation-duration: 0.4s;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+@mixin menu-open {
+  animation-name: menu-open;
+  @include animation();
+  @keyframes menu-open {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@mixin menu-close {
+  animation-name: menu-close;
+  @include animation();
+  @keyframes menu-close {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+  }
+}
+
+@mixin modal-open {
+  animation-name: modal-open;
+  @include animation();
+  @keyframes modal-open {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+@mixin modal-close {
+  animation-name: modal-close;
+  @include animation();
+  @keyframes modal-close {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+}
+
+@mixin visible {
+  animation-name: visible-el;
+  @include animation();
+  @keyframes visible-el {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin hidden {
+  animation-name: hidden-el;
+  @include animation();
+  @keyframes hidden-el {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}

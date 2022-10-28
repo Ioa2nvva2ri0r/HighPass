@@ -1,0 +1,424 @@
+.section-projects {
+  padding: 45px 0;
+  &__title {
+    margin-bottom: 17px;
+  }
+  &__tab {
+    display: none;
+    grid-template-columns: repeat(3, 14.75%) repeat(2, 23.2%);
+    gap: 30px;
+    padding-bottom: 45px;
+    @include modal-open();
+    &-active {
+      display: grid;
+    }
+    &-content {
+      @include flex-column;
+      justify-content: space-between;
+      &-1,
+      &-2,
+      &-3,
+      &-4,
+      &-5,
+      &-6,
+      &-7,
+      &-8,
+      &-9,
+      &-10,
+      &-11,
+      &-12,
+      &-13,
+      &-14,
+      &-15 {
+        position: relative;
+        &::after {
+          @include img-sub();
+        }
+      }
+      &-1,
+      &-2,
+      &-3,
+      &-4,
+      &-8,
+      &-9,
+      &-10,
+      &-15 {
+        grid-row: 1/2;
+      }
+      &-5,
+      &-6,
+      &-7 {
+        grid-row: 2/3;
+      }
+      &-11,
+      &-12,
+      &-13,
+      &-14 {
+        grid-row: 2/2;
+      }
+      &-1 {
+        grid-column: 1/2;
+        &::after {
+          content: "#пейзаж";
+        }
+      }
+      &-2 {
+        grid-column: 2/3;
+        &::after {
+          content: "#портрет";
+        }
+      }
+      &-3 {
+        grid-column: 3/3;
+        &::after {
+          content: "#предмет";
+        }
+      }
+      &-4 {
+        grid-column: 4/6;
+        &::after {
+          content: "#fuji";
+        }
+      }
+      &-5 {
+        grid-column: 1/4;
+        &::after {
+          content: "#проектзабвение";
+        }
+      }
+      &-6 {
+        grid-column: 4/5;
+        &::after {
+          content: "#ретушь";
+        }
+      }
+      &-7 {
+        grid-column: 5/6;
+        &::after {
+          content: "#портрет";
+        }
+      }
+      &-8 {
+        grid-column: 1/4;
+        &::after {
+          content: "#портрет";
+        }
+      }
+      &-9 {
+        grid-column: 4/5;
+        &::after {
+          content: "#ретушь";
+        }
+      }
+      &-10 {
+        grid-column: 5/6;
+        &::after {
+          content: "#портрет";
+        }
+      }
+      &-11 {
+        grid-column: 1/2;
+        &::after {
+          content: "#пейзаж";
+        }
+      }
+      &-12 {
+        grid-column: 2/3;
+        &::after {
+          content: "#предмет";
+        }
+      }
+      &-13 {
+        grid-column: 3/3;
+        &::after {
+          content: "#пейзаж";
+        }
+      }
+      &-14 {
+        grid-column: 4/6;
+        &::after {
+          content: "#проектджаз";
+        }
+      }
+      &-15 {
+        display: none;
+        &::after {
+          content: "#пейзаж";
+        }
+      }
+    }
+    &-img {
+      @include picture();
+      height: 184px;
+      margin-bottom: 17px;
+      &-2 {
+        height: 100%;
+      }
+      &-box-2 {
+        @include position-abs();
+        z-index: -1;
+      }
+    }
+    &-desc {
+      @include throw();
+      width: 100%;
+      max-width: 295px;
+      margin-bottom: 20px;
+      &-box {
+        @include flex-column();
+        justify-content: space-between;
+        height: 100%;
+        padding: 30px;
+        color: $color_7;
+      }
+      &-title {
+        margin-bottom: 6px;
+        line-height: 24px;
+        color: $color_7;
+      }
+    }
+    &-date {
+      color: #999999;
+      padding-left: 17px;
+      background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.6667 1.75004H11.0833V0.583374H9.91667V1.75004H4.08334V0.583374H2.91667V1.75004H2.33334C1.69167 1.75004 1.16667 2.27504 1.16667 2.91671V12.25C1.16667 12.8917 1.69167 13.4167 2.33334 13.4167H11.6667C12.3083 13.4167 12.8333 12.8917 12.8333 12.25V2.91671C12.8333 2.27504 12.3083 1.75004 11.6667 1.75004ZM11.6667 12.25H2.33334V4.66671H11.6667V12.25Z' fill='%23999999'/%3E%3C/svg%3E");
+      background-position: left center;
+      background-repeat: no-repeat;
+      font-size: 12px;
+      &-2 {
+        @include date-icon();
+        margin-bottom: 5px;
+        padding-left: 18px;
+        background-position: left center;
+        font-size: 12px;
+      }
+    }
+    &-btn-content {
+      max-width: 121px;
+      padding: 12px 19px;
+      border: 3px solid $color_1;
+      background-color: transparent;
+      &:hover {
+        background-color: $color_1;
+      }
+      &:focus {
+        background-color: $color_2;
+        border-color: $color_1;
+      }
+      &:active {
+        background-color: $color_3;
+        border-color: $color_3;
+      }
+    }
+    &-btn {
+      @include throw-btn();
+      width: 30px;
+      height: 30px;
+      background-color: #c4c4c4;
+      color: #223444;
+      transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+      &:hover {
+        color: $color_1;
+        transition: color 0.4s ease-in-out;
+      }
+      &:focus {
+        background-color: #ffd4c1;
+        transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+      }
+      &:active {
+        background-color: $color_1;
+        color: $color_7;
+        transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+      }
+      &-active {
+        background-color: $color_1;
+        color: $color_7;
+        transition: color 0.4s ease-in-out;
+        &:hover {
+          color: #223444;
+          transition: color 0.4s ease-in-out;
+        }
+      }
+      &-box {
+        @include flex-between();
+        width: 90px;
+        margin: 0 auto;
+      }
+    }
+  }
+  @media (max-width: 1315px) {
+    &__tab {
+      grid-template-columns: 22.7% repeat(4, 9.75%) 22.7%;
+      padding-bottom: 35px;
+      &-content {
+        &-2 {
+          grid-column: 2/4;
+        }
+        &-3 {
+          grid-column: 4/6;
+        }
+        &-4 {
+          grid-column: 1/5;
+          grid-row: 2/3;
+        }
+        &-5 {
+          grid-column: 3/7;
+          grid-row: 3/4;
+        }
+        &-6 {
+          grid-column: 5/7;
+        }
+        &-7 {
+          grid-column: 1/3;
+          grid-row: 3/4;
+        }
+        &-8 {
+          grid-column: 1/5;
+        }
+        &-9 {
+          grid-column: 5/7;
+        }
+        &-10 {
+          grid-column: 1/3;
+          grid-row: 2/3;
+        }
+        &-11 {
+          display: none;
+        }
+        &-12 {
+          grid-column: 1/2;
+          grid-row: 3/4;
+        }
+        &-13 {
+          grid-column: 2/4;
+          grid-row: 3/4;
+        }
+        &-14 {
+          grid-column: 3/7;
+        }
+        &-15 {
+          display: flex;
+        }
+      }
+    }
+  }
+  @media (max-width: 900px) {
+    &__tab {
+      grid-template-columns: 30.55% repeat(2, 13.1%) 30.5%;
+      &-content {
+        &-2 {
+          grid-column: 2/4;
+        }
+        &-3 {
+          grid-column: 4/5;
+        }
+        &-4 {
+          grid-column: 1/5;
+          grid-row: 2/3;
+        }
+        &-5 {
+          grid-column: 1/5;
+          grid-row: 4/5;
+        }
+        &-6 {
+          grid-column: 1/3;
+          grid-row: 3/4;
+        }
+        &-7 {
+          grid-column: 3/5;
+          grid-row: 3/4;
+        }
+        &-8 {
+          grid-column: 1/5;
+          grid-row: 2/3;
+        }
+        &-9 {
+          grid-column: 1/3;
+          grid-row: 3/4;
+        }
+        &-10 {
+          grid-column: 3/5;
+          grid-row: 3/4;
+        }
+        &-11 {
+          display: flex;
+          grid-row: 1/2;
+        }
+        &-12 {
+          grid-column: 2/4;
+          grid-row: 1/2;
+        }
+        &-13 {
+          grid-column: 4/5;
+          grid-row: 1/2;
+        }
+        &-14 {
+          grid-column: 1/5;
+          grid-row: 4/5;
+        }
+        &-15 {
+          display: none;
+        }
+      }
+      &-btn-box {
+        width: 80px;
+      }
+    }
+  }
+  @media (max-width: 570px) {
+    &__title {
+      @include title--sm();
+      max-width: 190px;
+    }
+    &__tab {
+      grid-template-columns: 100%;
+      &-content {
+        &-2,
+        &-3,
+        &-4,
+        &-5,
+        &-6,
+        &-7,
+        &-8,
+        &-9,
+        &-10,
+        &-11,
+        &-12,
+        &-13,
+        &-14 {
+          grid-column: 1/2;
+        }
+        &-2 {
+          grid-row: 2/3;
+        }
+        &-3 {
+          grid-row: 3/4;
+        }
+        &-4 {
+          grid-row: 4/5;
+        }
+        &-5 {
+          grid-row: 7/8;
+        }
+        &-6 {
+          grid-row: 5/6;
+        }
+        &-7 {
+          grid-row: 6/7;
+        }
+      }
+      &-desc {
+        &-box {
+          height: 350px;
+        }
+        &-title {
+          @include title--sm();
+        }
+      }
+      &-btn-box {
+        position: absolute;
+        top: 0;
+        right: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@mixin block-100 {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin position-abs {
+  @include block-100();
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+@mixin position-fix {
+  @include block-100();
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+
+@mixin position-abs-after {
+  @include block-100();
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+}
+
+@mixin position-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,88 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/roboto-bold-webfont.woff2") format("woff2"),
+    url("../fonts/roboto-bold-webfont.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/roboto-regular-webfont.woff2") format("woff2"),
+    url("../fonts/roboto-regular-webfont.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Firs Neue";
+  src: url("../fonts/ttfirsneue-bold-webfont.woff2") format("woff2"),
+    url("../fonts/ttfirsneue-bold-webfont.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Firs Neue";
+  src: url("../fonts/ttfirsneue-regular-webfont.woff2") format("woff2"),
+    url("../fonts/ttfirsneue-regular-webfont.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  min-width: 320px;
+  margin: 0 auto;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 22px;
+  background-color: white;
+  @media (max-width: 570px) {
+    font-size: 14px;
+  }
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: "Roboto";
+}
+
+a:focus,
+input:focus,
+button:focus {
+  outline: none;
+}
+
+input {
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.title-us {
+  @include title();
+}
+
+.btn-us {
+  @include btn-us();
+}
+
+.link-us {
+  @include link-us();
+}
